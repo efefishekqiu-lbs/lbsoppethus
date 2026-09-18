@@ -1,376 +1,189 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Öppet hus | LBS Lund</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>LBS Lund | Öppet hus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@900&family=IBM+Plex+Mono:wght@500&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <nav class="nav">
-            <a href="#top" class="logo">
-                <span class="logo-mark">LBS</span>
-                <span class="logo-text">Kreativa<br>Gymnasiet</span>
-            </a>
+  <header>
+    <a href="#start" class="logo">
+      <strong>LBS</strong>
+      <span>KREATIVA<br>GYMNASIET</span>
+    </a>
 
-            <div class="nav-links" id="navLinks">
-                <a href="#program">Program</a>
-                <a href="#elevarbeten">Elevarbeten</a>
-                <a href="#hitta">Hitta rätt</a>
-                <a href="#besok">Öppet hus →</a>
-            </div>
+    <nav>
+      <a href="#program">Program</a>
+      <a href="#hitta">Hitta rätt</a>
+      <a href="#projekt">Elevarbeten</a>
+    </nav>
+  </header>
 
-            <button class="menu-button" id="menuButton">Meny</button>
-        </nav>
-    </header>
+  <main>
+    <section class="present" id="start">
+      <div class="present-content">
+        <span class="small-title">[ LBS LUND / ÖPPET HUS ]</span>
 
-    <main id="top">
-        <section class="hero">
-            <div class="hero-inner">
-                <div>
-                    <p class="eyebrow">[ LBS Lund / Öppet hus ]</p>
+        <h1>
+          <span>DE BÄSTA IDÉERNA</span>
+          <span>HAR INGEN KOMMIT</span>
+          <span>PÅ ÄN</span>
+        </h1>
 
-                    <h1>
-                        Skapa din
-                        <span>framtid</span>
-                    </h1>
-
-                    <p class="hero-copy">
-                        Välkommen till LBS Kreativa Gymnasiet Lund. Upptäck våra
-                        kreativa utbildningar, se vad våra elever skapar och hitta
-                        rätt under ditt besök.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#program" class="button">
-                            Utforska program
-                            <span>↓</span>
-                        </a>
-
-                        <a href="#hitta" class="button alt">
-                            Hitta på skolan
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-info">
-                    <span class="mono">[ Öppet hus ]</span>
-
-                    <div class="big">
-                        Välkommen<br>
-                        till LBS
-                    </div>
-
-                    <p>
-                        Utforska skolan direkt i mobilen och hitta utbildningen
-                        som passar dig.
-                    </p>
-
-                    <p class="mono">Lund ↓</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section dark" id="program">
-            <div class="container">
-                <div class="section-head">
-                    <h2>Våra program</h2>
-
-                    <p>
-                        På LBS arbetar du kreativt och praktiskt med digitala
-                        verktyg. Utforska våra inriktningar och hitta det område
-                        som passar dig bäst.
-                    </p>
-                </div>
-
-                <div class="program-grid">
-                    <article class="program">
-                        <div class="program-top">
-                            <span class="number">[ 01 ]</span>
-                            <h3>Spelutveckling</h3>
-                        </div>
-
-                        <div class="program-bottom">
-                            <span class="tag">Teknikprogrammet</span>
-                            <p>
-                                Lär dig skapa spel, programmering och digitala
-                                upplevelser från idé till färdig produkt.
-                            </p>
-                            <span class="arrow">→</span>
-                        </div>
-                    </article>
-
-                    <article class="program">
-                        <div class="program-top">
-                            <span class="number">[ 02 ]</span>
-                            <h3>App & webbutveckling</h3>
-                        </div>
-
-                        <div class="program-bottom">
-                            <span class="tag">Teknikprogrammet</span>
-                            <p>
-                                Designa och bygg moderna webbplatser, appar och
-                                digitala tjänster.
-                            </p>
-                            <span class="arrow">→</span>
-                        </div>
-                    </article>
-
-                    <article class="program">
-                        <div class="program-top">
-                            <span class="number">[ 03 ]</span>
-                            <h3>AI & utveckling</h3>
-                        </div>
-
-                        <div class="program-bottom">
-                            <span class="tag">Teknikprogrammet</span>
-                            <p>
-                                Utforska programmering, problemlösning och modern
-                                teknik med fokus på framtidens verktyg.
-                            </p>
-                            <span class="arrow">→</span>
-                        </div>
-                    </article>
-
-                    <article class="program">
-                        <div class="program-top">
-                            <span class="number">[ 04 ]</span>
-                            <h3>Grafisk design</h3>
-                        </div>
-
-                        <div class="program-bottom">
-                            <span class="tag">Estetiska programmet</span>
-                            <p>
-                                Arbeta med visuell kommunikation, illustration,
-                                layout och digital design.
-                            </p>
-                            <span class="arrow">→</span>
-                        </div>
-                    </article>
-
-                    <article class="program">
-                        <div class="program-top">
-                            <span class="number">[ 05 ]</span>
-                            <h3>Spelgrafik</h3>
-                        </div>
-
-                        <div class="program-bottom">
-                            <span class="tag">Estetiska programmet</span>
-                            <p>
-                                Skapa karaktärer, miljöer, koncept och grafik för
-                                spel och interaktiva världar.
-                            </p>
-                            <span class="arrow">→</span>
-                        </div>
-                    </article>
-
-                    <article class="program">
-                        <div class="program-top">
-                            <span class="number">[ 06 ]</span>
-                            <h3>Foto & film</h3>
-                        </div>
-
-                        <div class="program-bottom">
-                            <span class="tag">Estetiska programmet</span>
-                            <p>
-                                Berätta historier genom foto, film, redigering och
-                                kreativ medieproduktion.
-                            </p>
-                            <span class="arrow">→</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section work" id="elevarbeten">
-            <div class="container">
-                <div class="section-head">
-                    <h2>Elevarbeten</h2>
-
-                    <p>
-                        På LBS lär du dig genom att skapa. Här kan besökare få en
-                        snabb bild av vad elever arbetar med inom olika program.
-                    </p>
-                </div>
-
-                <div class="work-grid">
-                    <article class="work-card">
-                        <div class="pixel-art">
-                            <div class="pixel-shape"></div>
-                        </div>
-
-                        <div class="work-content">
-                            <span class="tag">[ Spelgrafik ]</span>
-                            <h3>Karaktärsdesign</h3>
-                            <p>
-                                Från skiss och koncept till färdig digital
-                                karaktär.
-                            </p>
-                        </div>
-                    </article>
-
-                    <div class="work-stack">
-                        <article class="work-card small">
-                            <div class="pixel-art">
-                                <div class="pixel-shape"></div>
-                            </div>
-
-                            <div class="work-content">
-                                <span class="tag">[ Webbutveckling ]</span>
-                                <h3>Webbprojekt</h3>
-                                <p>Design, kod och interaktion.</p>
-                            </div>
-                        </article>
-
-                        <article class="work-card small">
-                            <div class="pixel-art">
-                                <div class="pixel-shape"></div>
-                            </div>
-
-                            <div class="work-content">
-                                <span class="tag">[ Grafisk design ]</span>
-                                <h3>Visuell identitet</h3>
-                                <p>Typografi, färg och form.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section map" id="hitta">
-            <div class="container">
-                <div class="map-wrap">
-                    <div class="map-info">
-                        <p class="eyebrow" style="color:#002736">
-                            [ Hitta rätt ]
-                        </p>
-
-                        <h2>
-                            Var händer<br>
-                            allt?
-                        </h2>
-
-                        <p>
-                            Använd kartan för att snabbt hitta program, aktiviteter
-                            och personal under öppet hus.
-                        </p>
-
-                        <div class="map-list">
-                            <div class="map-item">
-                                <span>Entré & information</span>
-                                <span>01 →</span>
-                            </div>
-
-                            <div class="map-item">
-                                <span>Teknikprogrammet</span>
-                                <span>02 →</span>
-                            </div>
-
-                            <div class="map-item">
-                                <span>Estetiska programmet</span>
-                                <span>03 →</span>
-                            </div>
-
-                            <div class="map-item">
-                                <span>Elevprojekt</span>
-                                <span>04 →</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="floorplan">
-                        <div class="room cyan">
-                            <span class="mono">[ 01 ]</span>
-                            <span>Entré<br>& information</span>
-                        </div>
-
-                        <div class="room">
-                            <span class="mono">[ 02 ]</span>
-                            <span>App & webb<br>AI & utveckling</span>
-                        </div>
-
-                        <div class="room wide">
-                            <span class="mono">[ 03 ]</span>
-                            <span>Grafisk design · Spelgrafik · Foto & film</span>
-                        </div>
-
-                        <div class="room">
-                            <span class="mono">[ 04 ]</span>
-                            <span>Elevarbeten</span>
-                        </div>
-
-                        <div class="room cyan">
-                            <span class="mono">[ → ]</span>
-                            <span>Följ skyltarna</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section visit" id="besok">
-            <div class="container">
-                <div class="visit-grid">
-                    <div>
-                        <p class="eyebrow">[ LBS Lund ]</p>
-                        <h2>
-                            Öppet
-                            <span>hus</span>
-                        </h2>
-
-                        <p>
-                            Kom förbi, träffa elever och lärare, testa våra
-                            kreativa verktyg och upptäck hur det är att gå på LBS.
-                        </p>
-
-                        <div class="visit-meta">
-                            <div>
-                                <span class="mono">Datum</span>
-                                <strong>Kommande öppet hus</strong>
-                            </div>
-
-                            <div>
-                                <span class="mono">Plats</span>
-                                <strong>LBS Kreativa Gymnasiet Lund</strong>
-                            </div>
-
-                            <div>
-                                <span class="mono">Tips</span>
-                                <strong>Ha mobilen redo</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="qr-placeholder">
-                        <div class="qr-pattern"></div>
-                        <span class="qr-label">QR-kod placeras här</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-logo">
-                LBS Kreativa<br>
-                Gymnasiet
-            </div>
-
-            <div class="footer-meta">
-                <p>[ LBS Lund ]</p>
-                <p>Öppet hus</p>
-                <p>Skapa · Utforska · Utvecklas</p>
-            </div>
+        <div class="present-question">
+          <strong>KANSKE DU?</strong>
+          <span>↘</span>
         </div>
-    </footer>
+
+        <p>
+          Välkommen till LBS Kreativa Gymnasiet Lund.
+          Upptäck våra program och hitta rätt under öppet hus.
+        </p>
+
+        <a href="#program" class="button">SE PROGRAM [↓]</a>
+      </div>
+
+      <div class="present-art">
+        <div class="art-main">
+          <span>[ SKAPA ]</span>
+          <strong>IDÉ</strong>
+          <strong>→</strong>
+          <strong>VERKLIGHET</strong>
+        </div>
+
+        <div class="pixel pixel-one"></div>
+        <div class="pixel pixel-two"></div>
+        <div class="pixel pixel-three"></div>
+      </div>
+    </section>
+
+    <section class="program" id="program">
+      <div class="section-title">
+        <span>[01]</span>
+        <div>
+          <p>VÅRA PROGRAM</p>
+          <h2>VAD VILL DU<br>SKAPA?</h2>
+        </div>
+      </div>
+
+      <div class="program-wrapper">
+        <article>
+          <span>01 / TEKNIK</span>
+          <h3>AI & WEBBUTVECKLING</h3>
+          <p>Programmering, webbutveckling och digital teknik.</p>
+          <strong>→</strong>
+        </article>
+
+        <article>
+          <span>02 / ESTET</span>
+          <h3>FOTO & FILM</h3>
+          <p>Foto, film, redigering och visuellt berättande.</p>
+          <strong>→</strong>
+        </article>
+
+        <article>
+          <span>03 / ESTET</span>
+          <h3>GRAFISK DESIGN</h3>
+          <p>Design, illustration och visuell kommunikation.</p>
+          <strong>→</strong>
+        </article>
+
+        <article>
+          <span>04 / ESTET</span>
+          <h3>MUSIKPRODUKTION</h3>
+          <p>Musikskapande, inspelning och produktion.</p>
+          <strong>→</strong>
+        </article>
+
+        <article>
+          <span>05 / ESTET</span>
+          <h3>SPELGRAFIK</h3>
+          <p>Karaktärer, miljöer och grafik för spel.</p>
+          <strong>→</strong>
+        </article>
+
+        <article>
+          <span>06 / TEKNIK</span>
+          <h3>SPELUTVECKLING</h3>
+          <p>Programmering och utveckling av egna spel.</p>
+          <strong>→</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="find" id="hitta">
+      <div class="section-title">
+        <span>[02]</span>
+        <div>
+          <p>HITTA RÄTT</p>
+          <h2>VAR SKA<br>JAG GÅ?</h2>
+        </div>
+      </div>
+
+      <div class="find-content">
+        <div class="map">
+          <span class="map-title">[ KARTA / UNDER ARBETE ]</span>
+
+          <div class="room entrance">
+            <span>01</span>
+            <strong>ENTRÉ</strong>
+          </div>
+
+          <div class="room tech">
+            <span>02</span>
+            <strong>TEKNIK</strong>
+          </div>
+
+          <div class="room estet">
+            <span>03</span>
+            <strong>ESTET</strong>
+          </div>
+
+          <div class="map-line"></div>
+        </div>
+
+        <div class="find-info">
+          <div>
+            <span>01</span>
+            <h3>ENTRÉ</h3>
+            <p>Information och startpunkt.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <h3>TEKNIK</h3>
+            <p>AI, webb och spelutveckling.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <h3>ESTET</h3>
+            <p>Design, foto, musik och spelgrafik.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projekt">
+      <span>[03 / ELEVARBETEN]</span>
+      <h2>SKAPAT<br>PÅ LBS</h2>
+
+      <div class="project-placeholder">
+        <span>[ BILDER KOMMER SNART ]</span>
+        <strong>ELEVARBETEN<br>UNDER ARBETE</strong>
+        <div>↘</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>LBS</strong>
+    <span>KREATIVA GYMNASIET LUND</span>
+    <a href="#start">TILL TOPPEN ↑</a>
+  </footer>
 </body>
 </html>
