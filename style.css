@@ -10,7 +10,7 @@
  }
  
  body {
-   background-color: #002736;
+   background-color: #111111;
    color: #fff;
    font-family: "Onest", sans-serif;
    text-rendering: optimizeLegibility;
@@ -88,7 +88,7 @@
  .section-title > span,
  .section-title p,
  .projects > span {
-   color: #00ffff;
+   color: #FFEB3B;
    font-family: "IBM Plex Mono";
    font-size: 11px;
  }
@@ -104,8 +104,8 @@
    display: block;
    width: max-content;
    padding: 15px 10px;
-   background-color: #00ffff;
-   color: #002736;
+   background-color: #FFEB3B;
+   color: #000;
    margin-bottom: 5px;
  }
  
@@ -115,8 +115,8 @@
  
  .present h1 > span:last-child {
    background-color: transparent;
-   border: 2px solid #00ffff;
-   color: #00ffff;
+   border: 2px solid #FFEB3B;
+   color: #FFEB3B;
    margin-left: 7vw;
  }
  
@@ -124,7 +124,7 @@
    width: 430px;
    display: flex;
    justify-content: space-between;
-   color: #00ffff;
+   color: #FFEB3B;
    font-family: "Big Shoulders Text";
    font-size: 31px;
  }
@@ -139,8 +139,8 @@
  .button {
    width: 180px;
    padding: 14px 17px;
-   background-color: #00ffff;
-   color: #002736;
+   background-color: #FFEB3B;
+   color: #000;
    display: block;
    font-family: "IBM Plex Mono";
    font-size: 11px;
@@ -156,7 +156,7 @@
    position: absolute;
    inset: 3vw;
    padding: 2vw;
-   background-color: #00ffff;
+   background-color: #FFEB3B;
    color: #002736;
    z-index: 5;
    display: flex;
@@ -177,7 +177,7 @@
  
  .pixel {
    position: absolute;
-   background-color: #00ffff;
+   background-color: #FFEB3B;
  }
  
  .pixel-one {
@@ -247,7 +247,7 @@
  }
  
  .program-wrapper > article:hover {
-   background-color: #00ffff;
+   background-color: #FFEB3B;
  }
  
  .program-wrapper span {
@@ -273,9 +273,21 @@
    font-size: 20px;
  }
  
+ .information {
+   padding: 9vh 7vw;
+   background-color: #FFEB3B;
+   color: #000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 40px;
+   font-weight: 900 !important;
+   font-family: "IBM Plex Mono";
+ }
+
  .find {
    padding: 9vh 7vw;
-   background-color: #00ffff;
+   background-color: #002736;
    color: #002736;
  }
  
@@ -292,8 +304,7 @@
  
  .map {
    height: 430px;
-   background-color: #002736;
-   color: #00ffff;
+   background-color: #00FFFF;
    position: relative;
  }
  
@@ -303,13 +314,15 @@
    left: 22px;
    font-family: "IBM Plex Mono";
    font-size: 10px;
+   padding: 5px 15px;
+   background-color: #FFEB3B;
  }
  
  .room {
    width: 115px;
    height: 70px;
    padding: 10px;
-   background-color: #00ffff;
+   background-color: #FFEB3B;
    color: #002736;
    position: absolute;
    display: flex;
@@ -346,7 +359,7 @@
    position: absolute;
    width: 55%;
    height: 2px;
-   background-color: #00ffff4d;
+   background-color: #FFEB3B4d;
    left: 25%;
    top: 50%;
  }
@@ -387,7 +400,7 @@
  
  .projects h2 {
    margin: 15px 0 5vh 0;
-   color: #00ffff;
+   color: #FFEB3B;
    font-family: "Big Shoulders Text";
    font-size: 5vw;
    line-height: 0.9;
@@ -397,7 +410,7 @@
    width: 70%;
    height: 300px;
    padding: 30px;
-   border: 1px dashed #00ffff;
+   border: 1px dashed #FFEB3B;
    display: flex;
    flex-direction: column;
  }
@@ -409,7 +422,7 @@
  
  .project-placeholder > strong {
    margin: auto 0;
-   color: #00ffff;
+   color: #FFEB3B;
    font-family: "Big Shoulders Text";
    font-size: 45px;
    line-height: 0.9;
@@ -417,7 +430,7 @@
  
  .project-placeholder > div {
    align-self: flex-end;
-   color: #00ffff;
+   color: #FFEB3B;
    font-size: 30px;
  }
  
