@@ -242,3 +242,4 @@ document.querySelectorAll('.present-art,.tilt-3d').forEach(el=>{
       el.style.transition='transform .4s ease';
       el.style.transform='perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
     });
+})
