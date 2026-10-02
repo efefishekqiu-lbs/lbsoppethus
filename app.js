@@ -1,245 +1,215 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const body = document.body;
-
-    const menuButton = document.querySelector(".menu-btn");
-    const mobileMenu = document.querySelector(".mobile-menu");
-
-    menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.remove("active");
-        });
-    });
-
-    const revealObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-            });
-        },
-        {
-            threshold: 0.12
+$(document).ready(function () {
+    function filterProjects(type) {
+      $(".filters button").removeClass("active");
+      $(`.filters button[data-filter="${type}"]`).addClass("active");
+  
+      $(".project-card").each(function () {
+        if (type === "all" || $(this).data("category") === type) {
+          $(this).removeClass("hidden");
+        } else {
+          $(this).addClass("hidden");
         }
-    );
-
-    document.querySelectorAll(".reveal").forEach((element) => {
-        revealObserver.observe(element);
-    });
-
-    const filterButtons = document.querySelectorAll(
-        ".filters button"
-    );
-
-    const projects = document.querySelectorAll(
-        ".project-card"
-    );
-
-    function filterProjects(category) {
-        filterButtons.forEach((button) => {
-            button.classList.toggle(
-                "active",
-                button.dataset.filter === category
-            );
-        });
-
-        projects.forEach((project) => {
-            const shouldShow =
-                category === "all" ||
-                project.dataset.category === category;
-
-            project.classList.toggle(
-                "hidden",
-                !shouldShow
-            );
-        });
+      });
     }
-
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            filterProjects(
-                button.dataset.filter
-            );
-        });
-    });
-
-    document
-        .querySelectorAll(".program-card")
-        .forEach((card) => {
-            card.addEventListener("click", () => {
-                const category = card.dataset.filter;
-
-                filterProjects(category);
-
-                document
-                    .querySelector("#projekt")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
-            });
-
-            const button = card.querySelector("button");
-
-            button.addEventListener("click", (event) => {
-                event.stopPropagation();
-
-                const category = card.dataset.filter;
-
-                filterProjects(category);
-
-                document
-                    .querySelector("#projekt")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
-            });
-        });
-
-    const roomText = document.querySelector("#roomText");
-
-    const roomDescriptions = {
-        entrance:
-            "Börja här. Vi hjälper dig att hitta rätt under öppet hus.",
-
-        tech:
-            "Här hittar du AI, webbutveckling, programmering och spelutveckling.",
-
-        estet:
-            "Här hittar du grafisk design, foto, film, musikproduktion och spelgrafik."
-    };
-
+  
     function selectRoom(room) {
-        document
-            .querySelectorAll(".map-room")
-            .forEach((element) => {
-                element.classList.toggle(
-                    "active",
-                    element.dataset.room === room
-                );
-            });
-
-        document
-            .querySelectorAll(".find-item")
-            .forEach((element) => {
-                element.classList.toggle(
-                    "active",
-                    element.dataset.room === room
-                );
-            });
-
-        roomText.textContent =
-            roomDescriptions[room];
+      $(".map-room, .find-item").removeClass("active");
+  
+      $(`.map-room[data-room="${room}"]`).addClass("active");
+      $(`.find-item[data-room="${room}"]`).addClass("active");
+  
+      if (room === "entrance") {
+        $("#roomText").text(
+          "Börja här. Vi hjälper dig att hitta rätt under öppet hus."
+        );
+      }
+  
+      if (room === "tech") {
+        $("#roomText").text(
+          "Här hittar du AI, webbutveckling, programmering och spelutveckling."
+        );
+      }
+  
+      if (room === "estet") {
+        $("#roomText").text(
+          "Här hittar du grafisk design, foto, film, musikproduktion och spelgrafik."
+        );
+      }
     }
-
-    document
-        .querySelectorAll(".map-room, .find-item")
-        .forEach((element) => {
-            element.addEventListener("click", () => {
-                selectRoom(
-                    element.dataset.room
-                );
-            });
-        });
-
-    const modal = document.querySelector(
-        ".project-modal"
-    );
-
-    const modalTitle = document.querySelector(
-        "#modalTitle"
-    );
-
-    const modalType = document.querySelector(
-        "#modalType"
-    );
-
-    const modalDescription = document.querySelector(
-        "#modalDescription"
-    );
-
-    const modalTech = document.querySelector(
-        "#modalTech"
-    );
-
+  
     function openProject(project) {
-        modalTitle.textContent =
-            project.dataset.title;
-
-        modalType.textContent =
-            `[ ${project.dataset.type.toUpperCase()} ]`;
-
-        modalDescription.textContent =
-            project.dataset.description;
-
-        modalTech.textContent =
-            project.dataset.tech;
-
-        modal.classList.add("active");
-        body.classList.add("lock");
+      $("#modalTitle").text(project.data("title"));
+      $("#modalType").text(`[ ${project.data("type").toUpperCase()} ]`);
+      $("#modalDescription").text(project.data("description"));
+      $("#modalTech").text(project.data("tech"));
+  
+      $(".project-modal").addClass("active");
+      $("body").addClass("lock");
     }
-
+  
     function closeProject() {
-        modal.classList.remove("active");
-        body.classList.remove("lock");
+      $(".project-modal").removeClass("active");
+      $("body").removeClass("lock");
     }
-
-    projects.forEach((project) => {
-        project.addEventListener("click", () => {
-            openProject(project);
+  
+    function scrollToSection(target) {
+      if (!$(target).length) {
+        return;
+      }
+  
+      $("html, body").stop().animate(
+        {
+          scrollTop:
+            $(target).offset().top -
+            ($(".header").outerHeight() || 0)
+        },
+        750,
+        "swing"
+      );
+    }
+  
+    $(".menu-btn").on("click", function () {
+      $(".mobile-menu").toggleClass("active");
+    });
+  
+    $(".mobile-menu a").on("click", function () {
+      $(".mobile-menu").removeClass("active");
+    });
+  
+    $("a[href^='#']").on("click", function (e) {
+      let target = $(this).attr("href");
+  
+      if (!target || target === "#") {
+        return;
+      }
+  
+      if (!$(target).length) {
+        return;
+      }
+  
+      e.preventDefault();
+  
+      $(".mobile-menu").removeClass("active");
+  
+      scrollToSection(target);
+    });
+  
+    $(".filters button").on("click", function () {
+      filterProjects($(this).data("filter"));
+    });
+  
+    $(".program-card").on("click", function () {
+      filterProjects($(this).data("filter"));
+  
+      scrollToSection("#projekt");
+    });
+  
+    $(".program-card button").on("click", function (e) {
+      e.stopPropagation();
+  
+      filterProjects(
+        $(this).closest(".program-card").data("filter")
+      );
+  
+      scrollToSection("#projekt");
+    });
+  
+    $(".map-room, .find-item").on("click", function () {
+      selectRoom($(this).data("room"));
+    });
+  
+    $(".project-card").on("click", function () {
+      openProject($(this));
+    });
+  
+    $(".modal-close, .modal-overlay").on("click", function () {
+      closeProject();
+    });
+  
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeProject();
+        $(".mobile-menu").removeClass("active");
+      }
+    });
+  
+    $(".footer-bottom a, .final-link, .banner, .scroll-label").on(
+      "mouseenter",
+      function () {
+        $(this).find("span:last-child").css({
+          position: "relative",
+          transition: "all ease 150ms"
         });
-    });
-
-    document
-        .querySelector(".modal-close")
-        .addEventListener(
-            "click",
-            closeProject
-        );
-
-    document
-        .querySelector(".modal-overlay")
-        .addEventListener(
-            "click",
-            closeProject
-        );
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-            if (event.key === "Escape") {
-                closeProject();
-
-                mobileMenu.classList.remove(
-                    "active"
-                );
-            }
+  
+        if ($(this).attr("href") === "#start") {
+          $(this).find("span:last-child").css("top", "-3px");
+        } else {
+          $(this).find("span:last-child").css("left", "4px");
         }
+      }
     );
-});
-
-document.querySelectorAll('.present-art,.tilt-3d').forEach(el=>{
-    el.style.transition='transform .15s ease';
-    el.style.transformStyle='preserve-3d';
-    el.style.willChange='transform';
   
-    el.addEventListener('mousemove',e=>{
-      const r=el.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width-.5;
-      const y=(e.clientY-r.top)/r.height-.5;
+    $(".footer-bottom a, .final-link, .banner, .scroll-label").on(
+      "mouseleave",
+      function () {
+        $(this).find("span:last-child").css({
+          top: "0",
+          left: "0"
+        });
+      }
+    );
   
-      el.style.transition='transform .05s linear';
-      el.style.transform=`perspective(800px) rotateX(${-y*20}deg) rotateY(${x*20}deg) scale(1.03)`;
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > 30) {
+        $(".header").css({
+          background: "#111111f5",
+          "backdrop-filter": "blur(8px)"
+        });
+      } else {
+        $(".header").css({
+          background: "#111111",
+          "backdrop-filter": "none"
+        });
+      }
+  
+      $("section[id]").each(function () {
+        let top = $(this).offset().top - 150;
+        let bottom = top + $(this).outerHeight();
+  
+        if (
+          $(window).scrollTop() >= top &&
+          $(window).scrollTop() < bottom
+        ) {
+          $(".desktop-nav a").css({
+            color: "#ffffff",
+            "border-color": "transparent"
+          });
+  
+          $(`.desktop-nav a[href="#${$(this).attr("id")}"]`).css({
+            color: "#ffeb3b",
+            "border-color": "#ffeb3b"
+          });
+        }
+      });
     });
   
-    el.addEventListener('mouseleave',()=>{
-      el.style.transition='transform .4s ease';
-      el.style.transform='perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+    $(".reveal").each(function () {
+      if (
+        $(this).offset().top <
+        $(window).scrollTop() + $(window).height() - 80
+      ) {
+        $(this).addClass("visible");
+      }
     });
-})
+  
+    $(window).on("scroll", function () {
+      $(".reveal:not(.visible)").each(function () {
+        if (
+          $(this).offset().top <
+          $(window).scrollTop() + $(window).height() - 80
+        ) {
+          $(this).addClass("visible");
+        }
+      });
+    });
+  });

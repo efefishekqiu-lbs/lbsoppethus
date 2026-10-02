@@ -139,7 +139,7 @@ p {
   display: block;
   width: max-content;
   max-width: 100%;
-  padding: 7px 12px;
+  padding: 4vh 1vw;
   margin-bottom: 5px;
   background: var(--yellow);
   color: var(--dark);
@@ -151,6 +151,8 @@ p {
 
 .hero-title span:nth-child(3) {
   margin-left: 8vw;
+  padding-top: 3.5vh;
+  padding-bottom: 10px;
   background: transparent;
   border: 2px solid var(--yellow);
   color: var(--yellow);
@@ -212,7 +214,8 @@ p {
 .hero-pixel-main {
   position: absolute;
   inset: 10%;
-  padding: 9%;
+  width: 25vw;
+  padding: 15%;
   background: var(--yellow);
   color: var(--dark);
   display: flex;
@@ -1183,4 +1186,35 @@ p {
   .footer-line {
     display: none;
   }
+}
+
+.footer-bottom a,
+.final-link,
+.banner,
+.scroll-label,
+.desktop-nav a,
+.mobile-menu a {
+  transition: all ease 150ms;
+}
+
+.footer-bottom a:hover {
+  color: var(--yellow);
+  transform: translateY(-3px);
+}
+
+.final-link:hover {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.banner:hover {
+  letter-spacing: 1px;
+}
+
+.scroll-label:hover {
+  transform: translateY(4px);
+}
+
+.desktop-nav a:hover {
+  transform: translateY(-2px);
 }
