@@ -1,7 +1,8 @@
 $(document).ready(function(){
    let currentStep=0;
    let isScrolling=false;
-   const steps=[$(".viewPort"),$(".information"),$('.projects'),$('.footer')];
+   const steps = [];
+//    const steps=[$(".viewPort"),$(".information"),$('.projects'),$('.footer')];
    const duration=700;
 
    function easeInOut(t){
